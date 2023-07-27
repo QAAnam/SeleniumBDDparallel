@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilClass.ActionUtility;
+import utilClass.JsUtility;
+import utilClass.RobotUtility;
 import utilClass.SelectUtils;
 import utilClass.UtilClass;
 
@@ -24,26 +27,56 @@ public class HomePage
 	
 	@FindBy(xpath = "//span[text()='My Account']")
 	private WebElement My_Account;
+	
 	@FindBy(linkText = "Login")
 	private WebElement Login;
+	
 	@FindBy(name="search")
 	private WebElement search;
+	
 	@FindBy(xpath="(//button[@type='button']//i)[1]")
 	private WebElement searchbutton;
+	
 	@FindBy(xpath = "(//input[@type='checkbox'])[2]")
 	private WebElement Search_in_product_descriptions;
+	
 	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 	private WebElement Search_in_subcategories;
+	
 	@FindBy(name="category_id")
 	private WebElement Select_category_id;
+	
 	@FindBy(xpath="//select[@name='category_id']//option")
 	private List<WebElement> Select_category_id_selections;
+	
 	@FindBy(linkText="Products meeting the search criteria")
 	private WebElement Products_meeting_the_search_criteria;
 	
 	@FindBy(xpath="//input[@value='Search']")
 	private WebElement newSearch;
 	
+	@FindBy(linkText = "OpenCart")
+	private WebElement openKartLinkOnBottom;
+	
+	@FindBy(xpath="//*[text()='123456789']")
+	private WebElement contactnum;
+	
+	public void scrollTocontactnum()
+	{
+		JsUtility.scrollToText(driver, contactnum);
+	}
+	public void scrollToopenKartLinkOnBottom()
+	{
+		JsUtility.scrollToText(driver, openKartLinkOnBottom);
+	}
+	public void rightclickOpenCart()
+	{
+		ActionUtility.rightClickOnEle(driver,openKartLinkOnBottom);
+	}
+	public void openInNewTabopenKartLinkOnBottom()
+	{
+		RobotUtility.pressDownAndEntr();
+	}
 	public void clickOnNewSearch()
 	{
 		newSearch.click();
