@@ -5,8 +5,8 @@ Feature: Register functionality
     When User enter below details
       | firstName | Anam                |
       | lastName  | kumar               |
-      | email     | anamkumar@gmail.com |
-      | tlephone  |          1234567890 |
+      | email     | anamkumar4@gmail.com|
+      | telephone |          1234567890 |
       | password  | anamkumar@gmail.com |
     And User click on privacy policy
     And user click on continue
@@ -17,8 +17,8 @@ Feature: Register functionality
     When User enter below details
       | firstName | Anam                |
       | lastName  | kumar               |
-      | email     | anamkumar@gmail.com |
-      | tlephone  |          1234567890 |
+      | email     | anamkumar4@gmail.com|
+      | telephone |          1234567890 |
       | password  | anamkumar@gmail.com |
     And user click on news letter
     And User click on privacy policy
