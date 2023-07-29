@@ -1,3 +1,4 @@
+@Sanity
 Feature: Register functionality
 
   Scenario: User creates with only mandatory fields
