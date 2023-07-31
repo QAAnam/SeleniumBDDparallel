@@ -26,5 +26,10 @@ public class ActionUtility
 		act.sendKeys(Keys.DOWN).release().sendKeys(Keys.ENTER).release().build().perform();
 		
 	}
+	public static void moveToElement(WebDriver driver,WebElement ele)
+	{
+		act = new Actions(driver);
+		act.moveToElement(ele).build().perform();
+	}
 
 }

@@ -47,7 +47,7 @@ public class Hooks
 		byte[] ts = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 		if(scenario.isFailed()) scenario.attach(ts, "image/png", Senarioname);
 		File ts1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try{Files.copy(ts1, new File(System.getProperty("user.dir")+"/target/CucumberScreenshots/"+Senarioname+".png"));}
+		try{Files.copy(ts1, new File(System.getProperty("user.dir")+"\\OutPutFiles\\CucumberScreenshots\\"+Senarioname+".png"));}
 		catch(Exception e) {e.printStackTrace();}
 		scenario.attach(S, "text/plain", Senarioname);
 		driver.quit();
