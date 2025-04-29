@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features= "src/test/resources/features",
 				glue={"stepDefinations","hooks"},
 				plugin= {"pretty","html:target/CucumberReports/Cucumber.html"},
-				tags="@Sanity",
+				tags= "@Smoke and not @Sanity",
 				publish=true)
 public class TestRunnerClass 
 {

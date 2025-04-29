@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN"
+               xmlns="https://logging.apache.org/xml/ns"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="https://logging.apache.org/xml/ns https://logging.apache.org/xml/ns/log4j-config-2.xsd">
+
+  <Appenders>
+    <!-- Console appender with color-coded output -->
+    <Console name="CONSOLE" target="SYSTEM_OUT">
+      <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss} %c{1}.%M - %msg%n}{FATAL=bg_red, ERROR=red bold, WARN=red, INFO=black, DEBUG=blue}"/>
+    </Console>
+
+    <!-- RollingFile appender to include timestamp in file name -->
+    <RollingFile name="TIMESTAMPED_LOG"
+                 fileName="C:/Users/anam.kumar/eclipse-workspace/SeleniumBDDparallel/OutPutFiles/log4J_Logs/latest.log"
+                 filePattern="C:/Users/anam.kumar/eclipse-workspace/SeleniumBDDparallel/OutPutFiles/log4J_Logs/log-%d{yyyy-MM-dd_HH-mm-ss}.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %c{1}.%M - %msg%n"/>
+      <Policies>
+        <OnStartupTriggeringPolicy/>
+      </Policies>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="CONSOLE"/>
+      <AppenderRef ref="TIMESTAMPED_LOG"/>
+    </Root>
+  </Loggers>
+</Configuration>
